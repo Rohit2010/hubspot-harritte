@@ -38,7 +38,7 @@ app.use(errorConverter);
 app.use(errorHandler);
 
 //db connection
-mongoose.connect(config.MONGODB_URL).then(() => {
+mongoose.connect('mongodb+srv://product:noAz9Iuapsw3GFdj@propel0.872kjy7.mongodb.net/verity-harritte').then(() => {
     console.log("db connected")
 }).catch((err) => console.log("error connecting db:::" , err?.message))
 
