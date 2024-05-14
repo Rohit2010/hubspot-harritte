@@ -38,9 +38,9 @@ app.use(errorConverter);
 app.use(errorHandler);
 
 //db connection
-mongoose.connect('mongodb+srv://product:noAz9Iuapsw3GFdj@propel0.872kjy7.mongodb.net/verity-harritte').then(() => {
+mongoose.connect(config.MONGODB_URL).then(() => {
     console.log("db connected")
-}).catch((err) => console.log("error connecting db:::" , err))
+}).catch((err) => console.log("error connecting db:::" , err?.message))
 
 
 // scheduler for sending data from hubspot to verity every hour;
