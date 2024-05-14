@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express")
 const ApiError = require('./utils/ApiError');
 const {errorConverter, errorHandler} = require('./middlewares/error');
