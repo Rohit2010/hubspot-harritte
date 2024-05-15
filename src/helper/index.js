@@ -21,7 +21,7 @@ const getVerityCourseValue = (course) => {
 }
 
 const saveEmailToMongo = async (dataObj) => {
-        const checkEmailExist = await VeritySubmission.findOne({timeStamp:dataObj?.timeStamp, email:dataObj?.email});
+        const checkEmailExist = await VeritySubmission.findOne({email:dataObj?.email});
 
         if(checkEmailExist){
             return false;
@@ -32,7 +32,7 @@ const saveEmailToMongo = async (dataObj) => {
         }
 }
 const checkLeadExists = async (dataObj) => {
-    const check = await VeritySubmission.findOne({timeStamp:dataObj?.timeStamp, email:dataObj?.email});
+    const check = await VeritySubmission.findOne({email:dataObj?.email});
     if(check){
         return true;
     } else {
