@@ -42,10 +42,6 @@ mongoose.connect(config.MONGODB_URL).then(() => {
     console.log("db connected")
 }).catch((err) => console.log("error connecting db:::" , err?.message))
 
-// (async () => {
-//     const check = await checkEmailExistence("yashsinha1@gmail.com")
-//     console.log(check, "neverBounce result")
-// })()
 // scheduler for sending data from hubspot to verity every hour;
 cron.schedule('* * * * *', async () => {
    const LastHourSubmissionOnHubspot = await getFormSubmissionInLastOneHour(config.TRIGGER_HUBSPOT_FORM_ID);
@@ -71,8 +67,15 @@ cron.schedule('* * * * *', async () => {
                         if(senddataVerity && senddataVerity?.data == 'updated application'){
                             const saveLead = await saveEmailToMongo({timeStamp:submission?.submittedAt, email:emailToCheck});
                         }
+                        if(senddataVerity && senddataVerity?.data == 'updated application'){
+                            const saveLead = await saveEmailToMongo({timeStamp:submission?.submittedAt, email:emailToCheck});
+                        }
                     }
                     if(checkEmail.getResult() === 'invalid'){
+                        const saveLead = await saveEmailToMongo({timeStamp:submission?.submittedAt, email:emailToCheck});
+                        console.log("Email verification failed");
+                    }
+                    if(checkEmail.getResult() === 'unknown'){
                         const saveLead = await saveEmailToMongo({timeStamp:submission?.submittedAt, email:emailToCheck});
                         console.log("Email verification failed");
                     }
