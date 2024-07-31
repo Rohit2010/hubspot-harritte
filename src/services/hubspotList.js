@@ -5,7 +5,6 @@ const { addPropertyQueries } = require("../helper/index");
 const headers = {
     Authorization: `Bearer ${config.HUBSPOT_ACCESS_TOKEN}`
 };
-let lastCallTimestamp = 1715417156261;
 
 
 // Function to fetch form fields by form ID
@@ -27,7 +26,7 @@ const getFormFields = async (formId) => {
 const getFormSubmissionInLastOneHour = async (formId) => {
     try {
         //api call
-        const data = await axios.get(`${config.HUBSPOT_BASE_URL}form-integrations/v1/submissions/forms/${formId}?limit=20`, {headers});
+        const data = await axios.get(`${config.HUBSPOT_BASE_URL}form-integrations/v1/submissions/forms/${formId}?limit=5`, {headers});
 
         const submissions = data?.data?.results;
         // check the submission which submitted in last one hour

@@ -23,10 +23,11 @@ async function sendLeadDataToVerity(formValues, submittedAt) {
         if(field.name === 'select_course'){
             data.append("SelectCourse", getVerityCourseValue(field.value))
             data.append('Campaigntype', getCampaignType(field.value))
-            data.append('program', getProgramValue(field.value))
+            data.append('program', getProgramValue(field.value))    
             data.append('programofenrollment', getProgramValue(field.value))
         }
     })
+    // console.log(data,"email------", data.email)
     try {
         const response = await axios.post(url, data, {
             headers: {

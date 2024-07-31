@@ -50,7 +50,7 @@ cron.schedule('* * * * *', async () => {
             const emailToCheck = submission?.values.length > 0 && submission.values.find((field) => field.name === 'email')?.value;
 
             const res = await checkLeadExists({timeStamp:submission?.submittedAt, email:emailToCheck})
-
+            console.log(res, "")
             if(!res){
                 const checkEmail = await checkEmailExistence(emailToCheck);
                 // console.log(checkEmail, "checkemaail")
