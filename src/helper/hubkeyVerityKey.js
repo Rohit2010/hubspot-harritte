@@ -79,6 +79,39 @@ const hubSpotToVerityProgramValues = [
         program:'Propel Learn Signature Courses',
         campaignType:'Art of Storytelling'
     },
+    //new courses
+    //need program values for new courses
+    {
+        course:"Socially Just Coding: Develop in Swift Explorations Pt. 3",
+        verityCourseValue:"Socially Just Coding: Develop in Swift Explorations Pt. 3",
+        // program:'Propel Learn Signature Courses',
+        campaignType:'SJC'
+    },
+    {
+        course:"Applying AI to your own problems and interests",
+        verityCourseValue:"Applying AI to your own problems and interests",
+        // program:'Propel Learn Signature Courses',
+        campaignType:'AIML'
+    },
+    {
+        course:"Podcast Like a Pro: Choosing Your Own Lane as Media Entrepreneur",
+        verityCourseValue:"Podcast Like a Pro: Choosing Your Own Lane as Media Entrepreneur",
+        // program:'Propel Learn Signature Courses',
+        campaignType:'AOST'
+    },
+    {
+        course:"Superpowers Unleashed: Productivity, Project Management, and Emerging Technologies",
+        verityCourseValue:"Superpowers Unleashed: Productivity, Project Management, and Emerging Technologies",
+        // program:'Propel Learn Signature Courses',
+        campaignType:'DYPS 3'
+    },
+    {
+        course:"Future Proof Entrepreneur",
+        verityCourseValue:"Future Proof Entrepreneur",
+        // program:'Propel Learn Signature Courses',
+        campaignType:'ENTR'
+    },
+
 ]
 
 module.exports = {
